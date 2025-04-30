@@ -12,10 +12,17 @@
         <div id="result"></div>
         
         <script type="py"> 
-            value1 = getElementById("num").element.value
-            num = int(value1)
-            num2 = int(num,16)
-            getElementById("result").write(num2)
+            from js import document
+
+            def convert_hex_to_decimal(event):
+                hex_value = document.getElementById("num1").value
+                try:
+                    decimal_value = int(hex_value, 16)
+                    document.getElementById("result").innerText = f"10進数: {decimal_value}"
+                except ValueError:
+                    document.getElementById("result").innerText = "⚠️ 有効な16進数を入力してください（例: 1A3F）"
+            
+            document.getElementById("convert-btn").addEventListener("click", convert_hex_to_decimal)
         </script>
     </body>
 </html>
