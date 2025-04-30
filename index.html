@@ -19,12 +19,12 @@
             def calculate(event):
                 value = document.getElementById("num1").value
                 if value:
-                num = int(value)
-                result = num * 2
-                Element("result").write(f"2倍の値: {result}")
-            else:
-                Element("result").write("数値を入力してください")
-                document.getElementById("calc-btn").addEventListener("click", calculate)
+                    num = int(value)
+                    result = num * 2
+                    Element("result").write(f"2倍の値: {result}")
+                else:
+                    Element("result").write("数値を入力してください")
+            document.getElementById("calc-btn").addEventListener("click", calculate)
         </script>
     </body>
 </html>
