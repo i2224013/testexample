@@ -8,13 +8,23 @@
         <script type="module" src="https://pyscript.net/releases/2025.3.1/core.js"></script>
     </head>
     <body>
-        <h1>Hello world!</h1>
-        <input type="number" id="num1" placeholder="数1">
+        <input type="number" id="num1" placeholder="数1" /
+        <button id="calc-btn">計算</button>
+        <div id="result"></div>
+        
         <script type="py"> 
-            from pyscript import display
-            num2 = int(num1,16)
-            num3 = num2/255
-            display(num2,num3)
+            from pyscript import Element
+            from js import document
+
+            def calculate(event):
+                value = document.getElementById("num1").value
+                if value:
+                num = int(value)
+                result = num * 2
+                Element("result").write(f"2倍の値: {result}")
+            else:
+                Element("result").write("数値を入力してください")
+                document.getElementById("calc-btn").addEventListener("click", calculate)
         </script>
     </body>
 </html>
