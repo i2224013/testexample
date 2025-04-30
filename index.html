@@ -12,13 +12,10 @@
         <div id="result"></div>
         
         <script type="py"> 
-            from pyscript import Element
-            from js import document
-                
-            value1 = Element("num").element.value
+            value1 = getElementById("num").element.value
             num = int(value1)
             num2 = int(num,16)
-            Element("result").write(num2)
+            getElementById("result").write(num2)
         </script>
     </body>
 </html>
