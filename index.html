@@ -14,7 +14,7 @@
         <script type="py"> 
             from js import document
             hex_value = document.getElementById("num1").value
-            decimal_value = int(hex_value, 16)
+            decimal_value = int(hex_value)
             document.getElementById("result").innerText = f"10進数: {decimal_value}"
         </script>
     </body>
